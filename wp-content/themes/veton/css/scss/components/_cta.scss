@@ -1,0 +1,77 @@
+.widget_cta {
+    overflow: hidden;
+    &:not(:last-child) {
+        margin-bottom: 80px;
+    }
+    &#wpb_widget-2 {
+        .inner {
+            @media screen and (min-width: $screen-lg-min) {
+                .info {
+                    & + div {
+                        margin-top: -20px;
+                        margin-bottom: -50px;
+                    }            
+                }
+            }
+        }
+    }
+    &#wpb_widget-3 {
+        .inner {
+            @media screen and (min-width: $screen-lg-min) {
+                padding-bottom: 0;
+            }
+        }
+    }
+    &#wpb_widget-4 {
+        .inner {
+            @media screen and (min-width: $screen-lg-min) {
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-right: 0;
+                .info {
+                    width: 41.66666667%;
+                    @media screen and (min-width: $screen-xxl-min) {
+                        width: 50%;
+                    }     
+                    & + div {
+                        margin-left: -18%;
+                    }            
+                }
+            }
+        }
+    }    
+    .inner {
+        padding: 40px 24px;
+        position: relative;
+        z-index: 2;
+        @media screen and (min-width: $screen-lg-min) {
+            padding: 60px 80px;
+        }
+        border-radius: 8px;
+        .info {
+            @media screen and (min-width: $screen-lg-min) {
+                padding-right: 56px;
+            }
+        }            
+        .subtitle {
+            margin-bottom: 24px;
+            @include toRem(font-size, 14);
+            text-transform: uppercase;
+        }
+        .text {
+            @include toRem(font-size, 16);
+        }
+        .title {
+            margin-bottom: 24px;
+            font-weight: bold;
+            @include toRem(font-size, 32);
+        } 
+        @for $i from 1 through 3 {
+            h#{$i} {
+                margin-bottom: 24px;
+                font-weight: bold;
+                @include toRem(font-size, 32);
+            }
+        }   
+    }
+}

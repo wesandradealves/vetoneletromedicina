@@ -1,0 +1,12 @@
+.privacy-policy {
+    .main {
+        padding-bottom: 0;
+        .banner {
+            .container {
+                @media screen and (min-width: $screen-lg-min) {
+                    padding-bottom: 110px;
+                }
+            }
+        }
+    }
+}

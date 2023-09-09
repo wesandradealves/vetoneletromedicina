@@ -1,0 +1,27 @@
+$palettes: (
+    brown: (base: #462E00, dark: #684500, medium: #8A5B00, light: #AC7509),
+    yellow: (base: #F0AC28, dark: #CE9017, medium: #CE9017, light: #CE9017),
+    pink: (base: #FFD78A, mediun: #FFD78A, light: #FFD78A),
+    black: (base: #1F1F20),
+    blue: (navy: #157873),
+    gray: (base: #656567, light: #EAEDF0)
+);
+
+@function color($color,$tone){
+
+    @if map-has-key($palettes,$color){
+        $color: map-get($palettes,$color);
+
+            @if map-has-key($color,$tone){
+                $tone: map-get($color,$tone);
+                @return $tone;
+            }
+
+            @warn "unknown tone `#{$tone}` in color";
+            @return null;        
+    }
+
+    @warn "unknown color `#{$color}` in palette";
+    @return null;
+   
+}

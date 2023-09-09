@@ -1,0 +1,26 @@
+.error404 {
+    .main {
+        padding-top: 80px;
+        background-color: transparentize($color: color(yellow, base), $amount: .86);
+        flex: 1;
+        .banner {
+            .container {
+                align-items: end;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            .info {
+                // &::after {
+                //     display: none;
+                // }
+                & + div {
+                    background: url(img/line.png) left bottom repeat-x transparent;
+                    @media screen and (max-width: $screen-md-min) {
+                        width: 100%;
+                    }
+                    padding-bottom: 40px;
+                }       
+            }    
+        }
+    }
+}

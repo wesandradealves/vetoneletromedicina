@@ -1,0 +1,52 @@
+.banner {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center; 
+    &[data-layout="boxed"] {
+        .info {
+            padding: 40px 32px;
+            background-color: white;
+            border: 1px solid  color(gray, light);
+            border-radius: 8px;     
+            position: relative;
+            &::after {
+                content: url(img/vector-1.png);
+                position: absolute;
+                top: calc(50% - (527px/2));
+                left: calc(50% - (574px/2));
+                z-index: 1;
+            }
+            * {
+                position: relative;
+                z-index: 2;
+            }
+        } 
+    }
+    .container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        @media screen and (min-width: $screen-lg-min) {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    }
+    .info {
+        p {
+            @include toRem(font-size, 16);
+            color: color(gray, base);
+        }
+        a {
+            color: color(blue, navy);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        @for $i from 1 through 3 {
+            h#{$i} {
+                font-weight: bold;
+                @include toRem(font-size, 24);
+            }
+        }       
+    }    
+}

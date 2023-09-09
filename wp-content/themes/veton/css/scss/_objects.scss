@@ -1,0 +1,109 @@
+.img-fluid {
+  max-width: 100%;
+}
+
+.btn {
+  padding: 16px;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  text-align: center;
+  border: 1px transparent solid;
+  border-radius: 4px;
+  transition: 150ms ease-in-out all;
+  @include toRem(font-size, 16);
+  [class*="fa"] {
+    position: relative;
+    top: 1px;
+    @include toRem(font-size, 24);
+  }
+  .icon {
+    margin-left: 16px;
+    margin-top: -2px;
+    margin-bottom: -1px;
+  }
+  &:not([class*="reverse"]) {
+    [class*="fa"] {
+      padding-left: 16px;
+    }
+  }
+  &[class*="reverse"] {
+    [class*="fa"] {
+      padding-right: 16px;
+    }
+  }
+  &.primary {
+    background-color: color(black, base);
+    color: white;
+    border-color: black;
+    &:hover {
+      color: black;
+      background-color: transparent;
+    }
+  }
+  &.secondary {
+    background-color: transparent;
+    color: black;
+    border-color: lightgray;
+    &:hover {
+      color: white;
+      border-color: black;
+      background-color: color(black, base);
+      .icon {
+        filter: invert(1) brightness(2);
+      }
+    }
+    &.variation {
+      background-color: white;
+      color: black;
+      border-color: white;
+      &:hover {
+        background-color: black;
+        color: white;
+        border-color: black;
+      }
+    }
+  }
+  &.helper {
+    background-color: color(yellow, base);
+    color: black;
+    border-color: color(yellow, base);
+    &:hover {
+      background-color: lighten($color: color(yellow, base), $amount: 5);
+    }
+  }
+  &.transparent {
+    background-color: transparent;
+    border: 0;
+    padding-left: 0;
+    padding-right: 0;
+    color: color(blue, navy);
+    &:hover {
+      background-color: inherit;
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background: url(img/sprite.png) -20px -24px no-repeat transparent;
+  &.chat {
+    background-position: -179px -24px;
+  }
+  &.phone {
+    background-position: -227px -24px;
+  }
+  &.envelope {
+    background-position: -274px -24px;
+  }
+  &.pin-mark {
+    background-position: -315px -24px;
+  }
+}

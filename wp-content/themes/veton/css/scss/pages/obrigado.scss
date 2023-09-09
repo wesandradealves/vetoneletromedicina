@@ -1,0 +1,8 @@
+.page--obrigado {
+    @extend .error404;
+    .main {
+        .banner .info+div {
+            background: none;
+        }        
+    }
+}
